@@ -1,0 +1,16 @@
+<form [formGroup] ="userForm" (ngSubmit)="onSubmit()">
+  <div>
+    <label>
+            Adresse email :
+            <input type="text" formControlName="mail">
+            <div *ngIf="getMail.errors &&
+            !userForm.get('userForm.mail')?.pristine">
+            <div [hidden]="!getMail.errors?.['required']">Entrez votre adresse email :)</div>
+            {{getMail.errors?.['email'].rules }}
+          </div>
+             </label>
+             <button>Inscription</button>
+  </div>
+</form>
+
+<!-- {{getMail.errors?.['email'].rules }} -->
